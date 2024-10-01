@@ -1,9 +1,0 @@
-{
-  "accountingassistantApp": {
-    "DocumentSoort": {
-      "null": "",
-      "INKOMENDE_FACTUUR": "INKOMENDE_FACTUUR",
-      "UITGAANDE_FACTUUR": "UITGAANDE_FACTUUR"
-    }
-  }
-}
