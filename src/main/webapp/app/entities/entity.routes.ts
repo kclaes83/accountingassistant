@@ -6,6 +6,16 @@ const routes: Routes = [
     data: { pageTitle: 'accountingassistantApp.adminAuthority.home.title' },
     loadChildren: () => import('./admin/authority/authority.routes'),
   },
+  {
+    path: 'documentkop',
+    data: { pageTitle: 'accountingassistantApp.documentkop.home.title' },
+    loadChildren: () => import('./documentkop/documentkop.routes'),
+  },
+  {
+    path: 'documentsegment',
+    data: { pageTitle: 'accountingassistantApp.documentsegment.home.title' },
+    loadChildren: () => import('./documentsegment/documentsegment.routes'),
+  },
   /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
 ];
 

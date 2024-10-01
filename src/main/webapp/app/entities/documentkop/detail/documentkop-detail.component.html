@@ -1,0 +1,88 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (documentkop(); as documentkopRef) {
+      <div>
+        <h2 data-cy="documentkopDetailsHeading"><span jhiTranslate="accountingassistantApp.documentkop.detail.title">Documentkop</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ documentkopRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentkop.bedrijfsnummer">Bedrijfsnummer</span></dt>
+          <dd>
+            <span>{{ documentkopRef.bedrijfsnummer }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="accountingassistantApp.documentkop.documentNrBoekhoudingsdocument">Document Nr Boekhoudingsdocument</span>
+          </dt>
+          <dd>
+            <span>{{ documentkopRef.documentNrBoekhoudingsdocument }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentkop.boekjaar">Boekjaar</span></dt>
+          <dd>
+            <span>{{ documentkopRef.boekjaar }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentkop.documentsoort">Documentsoort</span></dt>
+          <dd>
+            <span [jhiTranslate]="'accountingassistantApp.DocumentSoort.' + (documentkopRef.documentsoort ?? 'null')">{{
+              { null: '', INKOMENDE_FACTUUR: 'INKOMENDE_FACTUUR', UITGAANDE_FACTUUR: 'UITGAANDE_FACTUUR' }[
+                documentkopRef.documentsoort ?? 'null'
+              ]
+            }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentkop.documentdatum">Documentdatum</span></dt>
+          <dd>
+            <span>{{ documentkopRef.documentdatum | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentkop.boekingsdatum">Boekingsdatum</span></dt>
+          <dd>
+            <span>{{ documentkopRef.boekingsdatum | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentkop.boekmaand">Boekmaand</span></dt>
+          <dd>
+            <span [jhiTranslate]="'accountingassistantApp.Maand.' + (documentkopRef.boekmaand ?? 'null')">{{
+              {
+                null: '',
+                JA: 'JA',
+                FE: 'FE',
+                MA: 'MA',
+                AP: 'AP',
+                ME: 'ME',
+                JN: 'JN',
+                JL: 'JL',
+                AU: 'AU',
+                SE: 'SE',
+                OK: 'OK',
+                NO: 'NO',
+                DE: 'DE',
+              }[documentkopRef.boekmaand ?? 'null']
+            }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentkop.invoerdag">Invoerdag</span></dt>
+          <dd>
+            <span>{{ documentkopRef.invoerdag | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentkop.invoertijd">Invoertijd</span></dt>
+          <dd>
+            <span>{{ documentkopRef.invoertijd | formatMediumDatetime }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/documentkop', documentkopRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,65 @@
+{
+  "annotations": {
+    "changelogDate": "20241001125254"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "bedrijfsnummer",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "4"
+    },
+    {
+      "fieldName": "documentNrBoekhoudingsdocument",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    },
+    {
+      "fieldName": "boekjaar",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "4"
+    },
+    {
+      "fieldName": "documentsoort",
+      "fieldType": "DocumentSoort",
+      "fieldValues": "INKOMENDE_FACTUUR,UITGAANDE_FACTUUR"
+    },
+    {
+      "fieldName": "documentdatum",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "boekingsdatum",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "boekmaand",
+      "fieldType": "Maand",
+      "fieldValues": "JA,FE,MA,AP,ME,JN,JL,AU,SE,OK,NO,DE"
+    },
+    {
+      "fieldName": "invoerdag",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "invoertijd",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "Documentkop",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "documentsegment",
+      "otherEntityRelationshipName": "documentkop",
+      "relationshipName": "documentsegment",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
