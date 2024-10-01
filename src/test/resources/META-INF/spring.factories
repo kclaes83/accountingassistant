@@ -1,0 +1,2 @@
+org.springframework.test.context.ContextCustomizerFactory = be.kclaes83.\
+    accountingassistant.config.SqlTestContainersSpringContextCustomizerFactory
