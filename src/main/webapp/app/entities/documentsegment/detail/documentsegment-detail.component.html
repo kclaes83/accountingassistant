@@ -1,0 +1,84 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (documentsegment(); as documentsegmentRef) {
+      <div>
+        <h2 data-cy="documentsegmentDetailsHeading">
+          <span jhiTranslate="accountingassistantApp.documentsegment.detail.title">Documentsegment</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ documentsegmentRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentsegment.bedrijfsnummer">Bedrijfsnummer</span></dt>
+          <dd>
+            <span>{{ documentsegmentRef.bedrijfsnummer }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="accountingassistantApp.documentsegment.documentNrBoekhoudingsdocument"
+              >Document Nr Boekhoudingsdocument</span
+            >
+          </dt>
+          <dd>
+            <span>{{ documentsegmentRef.documentNrBoekhoudingsdocument }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentsegment.boekjaar">Boekjaar</span></dt>
+          <dd>
+            <span>{{ documentsegmentRef.boekjaar }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="accountingassistantApp.documentsegment.boekingsregelNrBoekhoudingsdocument"
+              >Boekingsregel Nr Boekhoudingsdocument</span
+            >
+          </dt>
+          <dd>
+            <span>{{ documentsegmentRef.boekingsregelNrBoekhoudingsdocument }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentsegment.boekingsregelIdentificatie">Boekingsregel Identificatie</span></dt>
+          <dd>
+            <span>{{ documentsegmentRef.boekingsregelIdentificatie }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentsegment.vereffeningsdatum">Vereffeningsdatum</span></dt>
+          <dd>
+            <span>{{ documentsegmentRef.vereffeningsdatum | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentsegment.invoerdatumVereffening">Invoerdatum Vereffening</span></dt>
+          <dd>
+            <span>{{ documentsegmentRef.invoerdatumVereffening | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentsegment.vereffeningsdocumentNr">Vereffeningsdocument Nr</span></dt>
+          <dd>
+            <span>{{ documentsegmentRef.vereffeningsdocumentNr }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentsegment.boekingssleutel">Boekingssleutel</span></dt>
+          <dd>
+            <span>{{ documentsegmentRef.boekingssleutel }}</span>
+          </dd>
+          <dt><span jhiTranslate="accountingassistantApp.documentsegment.documentkop">Documentkop</span></dt>
+          <dd>
+            @if (documentsegment()!.documentkop) {
+              <div>
+                <a [routerLink]="['/documentkop', documentsegment()!.documentkop?.id, 'view']">{{ documentsegmentRef.documentkop?.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/documentsegment', documentsegmentRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

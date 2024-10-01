@@ -52,6 +52,9 @@ public class CacheConfiguration {
             createCache(cm, be.kclaes83.accountingassistant.domain.User.class.getName() + ".authorities");
             createCache(cm, be.kclaes83.accountingassistant.domain.PersistentToken.class.getName());
             createCache(cm, be.kclaes83.accountingassistant.domain.User.class.getName() + ".persistentTokens");
+            createCache(cm, be.kclaes83.accountingassistant.domain.Documentkop.class.getName());
+            createCache(cm, be.kclaes83.accountingassistant.domain.Documentkop.class.getName() + ".documentsegments");
+            createCache(cm, be.kclaes83.accountingassistant.domain.Documentsegment.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
